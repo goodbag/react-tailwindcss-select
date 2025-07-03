@@ -187,9 +187,7 @@ const Select: React.FC<SelectProps> = ({
                     <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1">
                         {!isMultiple ? (
                             formatValue && typeof formatValue === "function" ? (
-                                formatValue(
-                                    value && !Array.isArray(value) ? value!.label : placeholder
-                                )
+                                formatValue(value && !Array.isArray(value) ? value : placeholder)
                             ) : (
                                 <p className="truncate cursor-default select-none">
                                     {value && !Array.isArray(value) ? value.label : placeholder}

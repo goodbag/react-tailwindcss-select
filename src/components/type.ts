@@ -51,6 +51,6 @@ export interface SelectProps {
     primaryColor: string;
     formatGroupLabel?: ((data: GroupOption) => JSX.Element) | null;
     formatOptionLabel?: ((data: Option) => JSX.Element) | null;
-    formatValue?: ((label: string) => JSX.Element) | null;
+    formatValue?: ((data: Option | string) => JSX.Element) | null;
     classNames?: ClassNames;
 }
