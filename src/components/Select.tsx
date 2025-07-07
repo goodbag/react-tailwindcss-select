@@ -168,6 +168,7 @@ const Select: React.FC<SelectProps> = ({
     );
 
     const valueBoxClassName = classNames?.valueBox || "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1";
+    const chevronIconContainerClassName = classNames?.chevronIconContainer || "px-1.5";
 
     const chevronIconClassName = useCallback(
         ({ open }: { open: boolean }) => {
@@ -272,7 +273,7 @@ const Select: React.FC<SelectProps> = ({
                             <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
                         </div>
 
-                        <div className="px-1.5">
+                        <div className={chevronIconContainerClassName}>
                             <ChevronIcon className={chevronIconClassName({ open })} />
                         </div>
                     </div>

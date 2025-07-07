@@ -446,6 +446,7 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
             : `${baseClasse} ${disabledClass}`;
     }, [classNames, isDisabled]);
     const valueBoxClassName = classNames?.valueBox || "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1";
+    const chevronIconContainerClassName = classNames?.chevronIconContainer || "px-1.5";
     const chevronIconClassName = useCallback(({ open }) => {
         if (classNames?.ChevronIcon && typeof classNames.ChevronIcon === "function") {
             return classNames.ChevronIcon({ open });
@@ -481,7 +482,7 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
                                 : "w-5 h-5 p-0.5" }))),
                     React.createElement("div", { className: "h-full" },
                         React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                    React.createElement("div", { className: "px-1.5" },
+                    React.createElement("div", { className: chevronIconContainerClassName },
                         React.createElement(ChevronIcon, { className: chevronIconClassName({ open }) })))),
             open && !isDisabled && (React.createElement("div", { className: classNames?.menu
                     ? classNames.menu

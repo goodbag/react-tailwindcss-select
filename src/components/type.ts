@@ -31,6 +31,7 @@ export interface ClassNames {
     searchIcon?: string;
     closeIcon?: string;
     valueBox?: string;
+    chevronIconContainer?: string;
 }
 
 export type SelectValue = Option | Option[] | null;
