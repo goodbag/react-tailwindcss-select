@@ -37,6 +37,7 @@ export interface ClassNames {
     closeIcon?: string;
     valueBox?: string;
     chevronIconContainer?: string;
+    actionBox?: string;
 }
 export type SelectValue = Option | Option[] | null;
 export interface SelectProps {

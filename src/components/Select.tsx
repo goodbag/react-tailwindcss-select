@@ -169,6 +169,7 @@ const Select: React.FC<SelectProps> = ({
 
     const valueBoxClassName = classNames?.valueBox || "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1";
     const chevronIconContainerClassName = classNames?.chevronIconContainer || "px-1.5";
+    const actionBoxClassName = classNames?.actionBox || "flex flex-none items-center py-1.5";
 
     const chevronIconClassName = useCallback(
         ({ open }: { open: boolean }) => {
@@ -250,7 +251,7 @@ const Select: React.FC<SelectProps> = ({
                         )}
                     </div>
 
-                    <div className="flex flex-none items-center py-1.5">
+                    <div className={actionBoxClassName}>
                         {loading && (
                             <div className="px-1.5">
                                 <Spinner primaryColor={primaryColor} />

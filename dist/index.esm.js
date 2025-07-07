@@ -447,6 +447,7 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
     }, [classNames, isDisabled]);
     const valueBoxClassName = classNames?.valueBox || "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1";
     const chevronIconContainerClassName = classNames?.chevronIconContainer || "px-1.5";
+    const actionBoxClassName = classNames?.actionBox || "flex flex-none items-center py-1.5";
     const chevronIconClassName = useCallback(({ open }) => {
         if (classNames?.ChevronIcon && typeof classNames.ChevronIcon === "function") {
             return classNames.ChevronIcon({ open });
@@ -473,7 +474,7 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
                                 React.createElement(CloseIcon, { className: classNames?.tagItemIcon
                                         ? classNames.tagItemIcon
                                         : "w-3 h-3 mt-0.5" }))))))))),
-                React.createElement("div", { className: "flex flex-none items-center py-1.5" },
+                React.createElement("div", { className: actionBoxClassName },
                     loading && (React.createElement("div", { className: "px-1.5" },
                         React.createElement(Spinner, { primaryColor: primaryColor }))),
                     isClearable && !isDisabled && value !== null && (React.createElement("div", { className: "px-1.5 cursor-pointer", onClick: clearValue },
