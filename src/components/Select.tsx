@@ -167,6 +167,8 @@ const Select: React.FC<SelectProps> = ({
         [classNames, isDisabled]
     );
 
+    const valueBoxClassName = classNames?.valueBox || "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1";
+
     return (
         <SelectProvider
             otherData={{
@@ -184,7 +186,7 @@ const Select: React.FC<SelectProps> = ({
                     onClick={toggle}
                     className={getSelectClass()}
                 >
-                    <div className="grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1">
+                    <div className={valueBoxClassName}>
                         {!isMultiple ? (
                             formatValue && typeof formatValue === "function" ? (
                                 formatValue(value && !Array.isArray(value) ? value : placeholder)

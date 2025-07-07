@@ -30,6 +30,7 @@ export interface ClassNames {
     searchBox?: string;
     searchIcon?: string;
     closeIcon?: string;
+    valueBox?: string;
 }
 
 export type SelectValue = Option | Option[] | null;

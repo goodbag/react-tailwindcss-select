@@ -245,6 +245,7 @@ This table shows all the options available in react-tailwindcss-select.
 | `primaryColor`                                | `String`   | `blue`             | Default theme of the field.                                                            |
 | `searchInputPlaceholder`                      | `String`   | `Search...`        | The placeholder shown for the search input field.                                      |
 | [`value`](#value)                             | `Object`   | `null`             | Current value of select field.                                                         |
+| [`valueBox`](#value)                             | `Object`   | `null`             | The box around the value                                                        |
 
 ### onChange
 
