@@ -452,6 +452,12 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
             : `${baseClasse} ${disabledClass}`;
     }, [classNames, isDisabled]);
     const valueBoxClassName = classNames?.valueBox || "grow pl-2.5 py-2 pr-2 flex flex-wrap gap-1";
+    const chevronIconClassName = React.useCallback(({ open }) => {
+        if (classNames?.ChevronIcon && typeof classNames.ChevronIcon === "function") {
+            return classNames.ChevronIcon({ open });
+        }
+        return `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}`;
+    }, [classNames]);
     return (React__default["default"].createElement(SelectProvider, { otherData: {
             formatGroupLabel,
             formatOptionLabel,
@@ -482,7 +488,7 @@ const Select = ({ options = [], value = null, onChange, onSearchInputChange, pla
                     React__default["default"].createElement("div", { className: "h-full" },
                         React__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
                     React__default["default"].createElement("div", { className: "px-1.5" },
-                        React__default["default"].createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })))),
+                        React__default["default"].createElement(ChevronIcon, { className: chevronIconClassName({ open }) })))),
             open && !isDisabled && (React__default["default"].createElement("div", { className: classNames?.menu
                     ? classNames.menu
                     : "absolute z-10 w-full bg-white shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700" },
